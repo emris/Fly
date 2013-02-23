@@ -1,0 +1,12 @@
+[
+{
+  "modid": "Fly",
+  "name": "Fly",
+  "version": "1.0",
+  "updateUrl": "",
+  "authors": [
+    "Emris_Morath"
+  ],
+  "description": "Chat command /fly.\nGives the player flying ability without the need for creative game mode."
+}
+]
