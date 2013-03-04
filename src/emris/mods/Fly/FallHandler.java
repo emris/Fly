@@ -1,6 +1,5 @@
 package emris.mods.Fly;
 
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.DamageSource;
 import net.minecraftforge.event.ForgeSubscribe;
