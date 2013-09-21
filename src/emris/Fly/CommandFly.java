@@ -15,7 +15,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package emris.mods.Fly;
+package emris.Fly;
 
 import java.util.List;
 
@@ -24,6 +24,7 @@ import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.entity.player.PlayerCapabilities;
 import net.minecraft.network.packet.Packet202PlayerAbilities;
+import net.minecraft.util.ChatMessageComponent;
 
 public class CommandFly extends CommandBase {
 
@@ -51,10 +52,10 @@ public class CommandFly extends CommandBase {
 			if (pc.allowFlying) {
 				pc.allowFlying = false;
 				pc.isFlying = false;
-				sender.sendChatToPlayer("No more flying for " + sender.getCommandSenderName() + ".");
+				sender.sendChatToPlayer(ChatMessageComponent.createFromText("No more flying for " + sender.getCommandSenderName() + "."));
 			} else {
 				pc.allowFlying = true;
-				sender.sendChatToPlayer(sender.getCommandSenderName() + " can fly now.");
+				sender.sendChatToPlayer(ChatMessageComponent.createFromText(sender.getCommandSenderName() + " can fly now."));
 			}
 			Packet202PlayerAbilities pcPack = new Packet202PlayerAbilities(pc);
 			curPlayer.capabilities = pc;

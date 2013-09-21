@@ -15,23 +15,19 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package emris.mods.Fly;
+package emris.Fly;
 
-import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.util.DamageSource;
 import net.minecraftforge.event.ForgeSubscribe;
-import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.event.entity.player.PlayerFlyableFallEvent;
 
 public class FallHandler {
 	@ForgeSubscribe
-	public void onPlayerFall(LivingHurtEvent event) 
+	public void onPlayerFlyFall(PlayerFlyableFallEvent event)
 	{
-		if (event.entityLiving instanceof EntityPlayerMP) {
-			EntityPlayerMP p = (EntityPlayerMP) event.entityLiving;
-			if (p.capabilities.allowFlying && event.source == DamageSource.fall) {
-				event.ammount = 0;
-			}
-//			System.out.println(event.source.damageType + " : " + event.ammount + " # " + p.capabilities.isFlying);
+		if(event.distance > 3) {
+			event.entityPlayer.playSound("damage.fallsmall", 1.0F, 1.0F);
+			event.entityPlayer.performHurtAnimation();
 		}
+		event.distance = 0;
 	}
 }
