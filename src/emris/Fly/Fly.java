@@ -1,4 +1,4 @@
-/*
+/**
  *  Copyright (C) 2013  emris
  *  https://github.com/emris/Fly
  *
@@ -25,7 +25,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 
-@Mod(modid="Fly", name="Fly", version="1.4")
+@Mod(modid="fly", name="Fly", version="1.4")
 @NetworkMod(clientSideRequired=false, serverSideRequired=false)
 public class Fly {
 	
